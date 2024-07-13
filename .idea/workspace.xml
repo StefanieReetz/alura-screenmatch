@@ -43,7 +43,7 @@
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/programa/screenmatch/src/Main.java&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.VidaDaCrianca">
+  <component name="RunManager" selected="Application.Principal">
     <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Principal" />
       <module name="screenmatch" />
@@ -60,8 +60,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.VidaDaCrianca" />
         <item itemvalue="Application.Principal" />
+        <item itemvalue="Application.VidaDaCrianca" />
       </list>
     </recent_temporary>
   </component>
