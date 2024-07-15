@@ -1,4 +1,6 @@
 import br.com.alura.screenmatch.calculo.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculo.FiltroRecomendacao;
+import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
@@ -21,6 +23,9 @@ public class Principal {
         System.out.println("Média de avaliações do filme: " +meuFilme.getTotalDeAvaliacoes());
 
         Serie myLittlePony = new Serie();
+        myLittlePony.avalia(10);
+        myLittlePony.avalia(8);
+        myLittlePony.avalia(9.5);
         myLittlePony.setNome("My Little Pony");
         myLittlePony.setAnoDeLancamento(2000);
         myLittlePony.exibeFichaTecnica();
@@ -40,5 +45,14 @@ public class Principal {
         calculadora.inclui(myLittlePony);
         System.out.println(calculadora.getTempoTotal());
 
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(myLittlePony);
+        episodio.setTotalVizzualicacoes(300);
+        filtro.filtra(episodio);
     }
+
 }
