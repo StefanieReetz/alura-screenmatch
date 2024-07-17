@@ -4,6 +4,9 @@ import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Principal {
 
     public static void main(String[] args) {
@@ -48,11 +51,28 @@ public class Principal {
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtra(meuFilme);
 
+
+
         Episodio episodio = new Episodio();
         episodio.setNumero(1);
         episodio.setSerie(myLittlePony);
         episodio.setTotalVizzualicacoes(300);
         filtro.filtra(episodio);
+
+        var filmeDaMae = new Filme("Menino do Pijama Listrado");
+        filmeDaMae.setNome("Menino do Pijama Listrado");
+        filmeDaMae.setDuracaoEmMinutos(120);
+        filmeDaMae.setAnoDeLancamento(2008);
+        filmeDaMae.avalia(9);
+        filmeDaMae.avalia(10);
+
+        ArrayList<Filme> listadefilmes = new ArrayList<>();
+        listadefilmes.add(filmeDaMae);
+        listadefilmes.add(meuFilme);
+        listadefilmes.add(outroFilme);
+        System.out.println("Tamanho da lista: " + listadefilmes.size());
+        System.out.println("Primeiro Filme: " + listadefilmes.get(0).getNome());
+        System.out.println(listadefilmes);
     }
 
 }
