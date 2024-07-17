@@ -10,5 +10,9 @@ public class TesteAnimais {
         Gato gato = new Gato();
         gato.emitirSom();
         gato.arranharMoveis();
+
+        Animal animal = (Animal) cachorro;
+
+        System.out.println(animal.nome);
     }
 }
