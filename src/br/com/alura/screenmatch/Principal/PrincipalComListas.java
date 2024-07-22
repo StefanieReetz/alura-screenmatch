@@ -4,10 +4,7 @@ import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -36,9 +33,10 @@ public class PrincipalComListas {
             }
         }
 
-        ArrayList<String> buscaPorArtista = new ArrayList<>();
+        List<String> buscaPorArtista = new ArrayList<>();
         buscaPorArtista.add("Wallace");
         buscaPorArtista.add("Wagner");
+
         buscaPorArtista.add("Jennifer");
         buscaPorArtista.add("Anne Frank");
         System.out.println(buscaPorArtista);
@@ -51,5 +49,7 @@ public class PrincipalComListas {
         System.out.println(lista);
 
         lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano:");
+        System.out.println(lista);
     }
 }
