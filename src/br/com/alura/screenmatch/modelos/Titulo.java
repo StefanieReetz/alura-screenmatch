@@ -1,5 +1,6 @@
 package br.com.alura.screenmatch.modelos;
 
+import br.com.alura.screenmatch.Principal.TituloOmdb;
 import com.google.gson.annotations.SerializedName;
 
 //classe mae
@@ -11,11 +12,17 @@ public class Titulo implements Comparable<Titulo>{
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
-    private int DuracaoEmMinutos;
+    private int duracaoEmMinutos;
 
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public Titulo(TituloOmdb meutituloOmdb) {
+        this.nome = meutituloOmdb.title();
+        this.anoDeLancamento = Integer.valueOf( meutituloOmdb.year());
+        this.duracaoEmMinutos = Integer.valueOf(meutituloOmdb.runtime().substring(0,3));
     }
 
     public String getNome() {
@@ -31,7 +38,7 @@ public class Titulo implements Comparable<Titulo>{
     }
 
     public int getDuracaoEmMinutos() {
-        return DuracaoEmMinutos;
+        return duracaoEmMinutos;
     }
 
     public int getTotalDeAvaliacoes(){
@@ -47,7 +54,7 @@ public class Titulo implements Comparable<Titulo>{
     }
 
     public void setDuracaoEmMinutos(int duracaoEmMinutos) {
-        DuracaoEmMinutos = duracaoEmMinutos;
+        this.duracaoEmMinutos = duracaoEmMinutos;
     }
 
     public void setNome(String nome){
@@ -77,7 +84,7 @@ public class Titulo implements Comparable<Titulo>{
     @Override
     public String toString() {
         return "Nome: " + nome +
-        "\nAno De Lancamento: " + anoDeLancamento ;
+        "\nAno De Lancamento: " + anoDeLancamento + "\nDuracao em minutos: " + duracaoEmMinutos;
                 }
     }
 
